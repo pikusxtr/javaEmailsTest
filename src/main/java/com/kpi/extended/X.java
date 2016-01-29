@@ -12,5 +12,6 @@ String name;
 
     public void methodA(){
         System.out.println("I am methodA - class X");
+        System.out.println("I am KPI - class X");
     }
 }
