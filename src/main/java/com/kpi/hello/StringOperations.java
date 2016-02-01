@@ -8,5 +8,6 @@ public class StringOperations {
         String checkCaseSensit = "KPIpopo";
         System.out.println("Contains KPI=" + checkCaseSensit.contains("KPI"));
         System.out.println("Contains lowercase kpi=" + checkCaseSensit.contains("kpi"));
+        System.out.println("First 5 characters=" + "test160201ABCDEF".substring(0,10));
     }
 }
