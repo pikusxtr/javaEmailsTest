@@ -1,5 +1,8 @@
 package com.kpi.sorting;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 /**
  * Created by T5500 on 2016-01-31.
  */
@@ -20,7 +23,7 @@ public class MyBubbleSort {
                 }
             }
             if(!isSwapped){
-                System.out.println("SWAP=False");
+                System.out.println("SWAP=False - Exit Loop");
                 break;
             }
             printNumbers(array);
@@ -38,19 +41,17 @@ public class MyBubbleSort {
     }
 
     private static void printNumbers(int[] input) {
-
-        for (int i = 0; i < input.length; i++) {
-            System.out.print(input[i] + ", ");
-        }
+        Arrays.stream(input).mapToObj(value -> value + " --- ").forEach(System.out::print);
         System.out.println("\n");
     }
 
     public static void main(String[] args) {
-        int[] input = { 6, 4, 2, 1 };
+        //int[] input = { 6, 4, 2, 1 };
+        int[] input2 = { 6,4,2,1 };
         System.out.println("Before sort=");
-        printNumbers(input);
+        printNumbers(input2);
         System.out.println("Sorting has started...");
-        bubble_srt(input);
+        bubble_srt(input2);
 
     }
 }

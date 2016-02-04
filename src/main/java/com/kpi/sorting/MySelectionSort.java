@@ -14,14 +14,14 @@ public class MySelectionSort {
                 System.out.println("index=" + index + "   " + "j=" + j);
                 System.out.println("arr[" + index + "]= " + arr[index] + "    " + "arr[" + j + "] = " + arr[j]);
                 if (arr[j] < arr[index]) {
-                    index = j;
+                    index = j; //set index for the lowest value
                     System.out.println("IF ENtered----- index=" + index);
                 }
             }
 
             int smallerNumber = arr[index];
             arr[index] = arr[i];
-            arr[i] = smallerNumber;
+            arr[i] = smallerNumber; //move lowest value to the left of array
             printArray(arr);
         }
         return arr;
