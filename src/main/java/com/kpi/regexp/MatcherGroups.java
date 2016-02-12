@@ -14,10 +14,12 @@ public class MatcherGroups {
         String line = "This order was pplaced for QT3000! OK?";
         String line2 = "This order was pplaced This for kpi+_kokoRS QT3000! OK?";
         String line3 = "region_match";
+        String lineBinary = "110001000011";
        // line3.compareTo()
 
         // String pattern = "(\\d+)(!.*OK.+)";
-       String pattern = "(This.{3})";
+       String pattern = "(This.{3,6})";
+       String patternBinary = "(10+1)";
         String pattern2 = "([a-zA-Z_+]{5,30}RS)";
         String pattern3 = "(region_.+)";
 
@@ -26,6 +28,7 @@ public class MatcherGroups {
         Pattern r = Pattern.compile(pattern);
         Pattern r2 = Pattern.compile(pattern2);
         Pattern r3 = Pattern.compile(pattern3);
+        Pattern bin = Pattern.compile(patternBinary);
 
 
         Pattern pattern1 = Pattern.compile(pattern);
@@ -35,6 +38,9 @@ public class MatcherGroups {
         Matcher m2 = pattern1.matcher(line2);
         Matcher m3 = r2.matcher(line2);
         Matcher m4 = r3.matcher(line3);
+        Matcher binMatcher = bin.matcher(lineBinary);
+
+
 
         System.out.println("Matcher groups=" + m.groupCount());
         if (m.find( )) {
@@ -74,6 +80,16 @@ public class MatcherGroups {
             //System.out.println("Found value: " + m.group(2) );
         } else {
             System.out.println("NO MATCH");
+        }
+
+
+        while(binMatcher.find()){
+            System.out.println("Bin - Found value: " + binMatcher.group(0) );
+            System.out.println("Bin position start"+ binMatcher.start());
+            System.out.println("bin position end"+ binMatcher.end());
+
+            //System.out.println("m2.matches()=" +m2.matches() );
+
         }
 
     }
