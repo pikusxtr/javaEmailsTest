@@ -20,6 +20,7 @@ public class XYZ implements MyInterface {
     public static void main(String[] args) {
         MyInterface obj = new XYZ();
         obj.method1();
+        //obj does not have printsentence() method of XYZ class
         XYZ myXyz = new XYZ();
         myXyz.method1();
         myXyz.printSentence();
