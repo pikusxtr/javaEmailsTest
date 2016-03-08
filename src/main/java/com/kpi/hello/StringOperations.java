@@ -9,5 +9,6 @@ public class StringOperations {
         System.out.println("Contains KPI=" + checkCaseSensit.contains("KPI"));
         System.out.println("Contains lowercase kpi=" + checkCaseSensit.contains("kpi"));
         System.out.println("First 5 characters=" + "test160201ABCDEF".substring(0,10));
+        System.out.println("All but last 2 characters=" + "test160201ABCDEFXX22".replaceFirst("XX.*$", ""));
     }
 }

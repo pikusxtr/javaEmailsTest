@@ -3,21 +3,17 @@
 <suite name="TestNgParametersSuite" parallel="false">
   <test name="TestNgParametersTest">
     <parameter name="myParam1" value="TestNG Parameter1 Example Set in suite xml"></parameter>
+    <parameter name="myParam2" value="TestNG Parameter2 Example Set in suite xml"></parameter>
     <parameter name="birthYear" value="1982"></parameter>
-
     <classes>
-
       <class name="com.kpi.testng.ParametersSample"/>
-
     </classes>
-
   </test>
   <test name="TestNgParametersTest2">
     <parameter name="myParam1" value="TestNG Parameter1A Example Set in suite xml"></parameter>
-
+    <parameter name="myParam2" value="TestNG Parameter2A Example Set in suite xml"></parameter>
     <classes>
       <class name="com.kpi.testng.ParametersSampleTwo"/>
     </classes>
-
   </test>
 </suite>

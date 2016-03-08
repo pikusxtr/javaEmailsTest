@@ -2,6 +2,8 @@ package com.kpi.testng;
 
 import org.testng.Assert;
 import org.testng.ITestContext;
+import org.testng.ITestNGMethod;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -20,6 +22,15 @@ public class ParametersSample{
         System.out.println("test log birthYear=" + birthYear);
         System.out.println("text context ITestContext getName=" + context.getName());
         System.out.println("text context ITestContext getHost=" + context.getHost());
-        Assert.assertEquals("variableAAA", "variableAAA");
+        System.out.println("text context ITestContext getHost=" + context.getPassedTests().size());
+        Assert.assertEquals("variableAdAA", "variableAAA");
+        Assert.assertEquals("variableAdAA", "variableAAA");
+        System.out.println("text context ITestContext getHost=" + context.getPassedTests().size());
+
+    }
+
+    @AfterClass
+    public void runAfterTest() {
+        System.out.println("After Class method AAAA");
     }
 }
