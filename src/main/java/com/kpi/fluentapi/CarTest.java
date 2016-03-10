@@ -10,7 +10,13 @@ public class CarTest {
         Car porsche = new Car();
         porsche.setNumberOfSeats(55);
         porsche.verifyNumberOfSeatsIsNotZero();
-        porsche.<Car>withNumberOFWheels(55).verifyNumberOfSeatsIsNotZero();
+        porsche
+                .<Car>withNumberOFWheels(55)
+                .verifyNumberOfSeatsIsNotZero();
+
+        porsche
+                .verifyNumberOfSeatsIsNotZero()
+                .<Car>withNumberOFWheels(55);
        // porsche.setNumberOfSeats(44);
        // porsche.<Car>withNumberOFWheels(3).verifyNumberOfSeatsIsNotZero();
     }
