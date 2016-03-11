@@ -1,5 +1,7 @@
 package com.kpi.codility;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -12,6 +14,7 @@ class BinaryGap {
 
     public static int solution(int N) {
         System.out.println("Binary value of "+ N + " = " + Integer.toBinaryString(N));
+        System.out.println("HEX value of "+ N + " = " + Integer.toHexString(N));
         int result=0;
         if(N > 0) {
             List<Integer> zeroesList  = new ArrayList<>();
@@ -20,6 +23,7 @@ class BinaryGap {
             boolean found = myMatcher.find();
             while (found) {
                 zeroesList.add(myMatcher.group().toString().replace("1", "").length());
+//check stirng utils                StringUtils.countMatches()
                 found = myMatcher.find(myMatcher.start() + 1);
             }
             if(zeroesList.size() > 0) {
